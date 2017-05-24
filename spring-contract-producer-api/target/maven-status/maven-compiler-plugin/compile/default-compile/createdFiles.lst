@@ -1,0 +1,4 @@
+com\producer\api\ProducerController.class
+com\producer\api\Account.class
+com\producer\api\Client.class
+com\producer\api\SpringBooterProducer.class

@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.consumer.api.ConsumerServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 6.961 sec <<< FAILURE! - in com.consumer.api.ConsumerServiceTest
+checkClientNameMatches(com.consumer.api.ConsumerServiceTest)  Time elapsed: 0.279 sec  <<< FAILURE!
+java.lang.AssertionError: expected same:<Ninety nine> was not:<Ninety nine>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotSame(Assert.java:828)
+	at org.junit.Assert.assertSame(Assert.java:771)
+	at org.junit.Assert.assertSame(Assert.java:782)
+	at com.consumer.api.ConsumerServiceTest.checkClientNameMatches(ConsumerServiceTest.java:25)
+
+checkClientNameDoesNotMatch(com.consumer.api.ConsumerServiceTest)  Time elapsed: 0.113 sec  <<< ERROR!
+org.springframework.web.client.HttpClientErrorException: 404 null
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:63)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:700)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:653)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:628)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:590)
+	at com.consumer.api.ConsumerService.getClientName(ConsumerService.java:29)
+	at com.consumer.api.ConsumerServiceTest.checkClientNameDoesNotMatch(ConsumerServiceTest.java:33)
+
