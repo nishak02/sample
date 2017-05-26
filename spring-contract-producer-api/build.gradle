@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.producer.api'
+version = '0.0.1-SNAPSHOT'
+
+description = """spring-contract-producer-api"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+     mavenLocal()   
+     maven { url "http://repo.spring.io/milestone/" }
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter', version:'1.5.3.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.5.3.RELEASE'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.3.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+    testCompile group: 'org.springframework.cloud', name: 'spring-cloud-starter-contract-verifier', version:'1.1.0.RELEASE'
+}
