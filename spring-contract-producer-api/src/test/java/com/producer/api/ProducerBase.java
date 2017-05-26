@@ -1,6 +1,7 @@
 package com.producer.api;
 
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -22,6 +23,11 @@ public class ProducerBase {
 		Mockito.when(env.getProperty("99")).thenReturn("Ninety nine");
 		Mockito.when(env.getProperty("96")).thenReturn("Ninety sixx");
 		RestAssuredMockMvc.standaloneSetup(producerController, env);
+	}
+	
+	@Test
+	public void checkTest(){
+		System.out.println("Tests Initialized");
 	}
 	
 }
