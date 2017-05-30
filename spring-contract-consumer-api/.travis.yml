@@ -5,4 +5,6 @@ before_install:
   - cd java
   - mvn install 
 
+script: bundle exec rake --verbose --trace
+
 $ git push origin
